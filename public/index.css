@@ -1,0 +1,28 @@
+.nav-wrapper {
+    background-color: rgb(30, 127, 160);
+}
+
+.card {
+    text-align: center;
+}
+
+.price {
+    font-size: 30px;
+}
+
+.course {
+    text-align: center;
+}
+
+.course-img {
+    margin: auto;
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+}
+
+.course-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

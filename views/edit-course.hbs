@@ -1,0 +1,30 @@
+<h1>Edit course</h1>
+<div class="row">
+    <form class="col s12" method="POST" action="/courses/edit-course">
+      <div class="row">
+        <div class="col s12">
+          <div class="input-field">
+            <input id="title" type="text" class="validate" required name="course_title" value={{course.title}}>
+            <label for="title">Title</label>
+            <span class="helper-text" data-error="Please write a title"></span>
+          </div>
+
+          <div class="input-field">
+            <input id="price" type="number" class="validate" required name="course_price" value={{course.price}}>
+            <label for="price">Price</label>
+            <span class="helper-text" data-error="Please write a price"></span>
+          </div>
+
+          <div class="input-field">
+            <input id="image" type="text" class="validate" required name="course_image" value={{course.img}}>
+            <label for="image">Image</label>
+            <span class="helper-text" data-error="Please add an image"></span>
+          </div>
+
+          <input type="hidden" name="course_id" value="{{course.id}}">
+
+          <button class="btn btn-primary">Edit cource</button>
+        </div>
+      </div>
+    </form>
+  </div>

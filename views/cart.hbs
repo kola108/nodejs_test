@@ -1,0 +1,30 @@
+{{#if courses.length}}
+    <table>
+        <thead>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Count</th>
+            <th></th>
+        </thead>
+        <tbody>
+            {{#each courses}}
+                <tr>
+                    <td>{{title}}</td>
+                    <td>{{price}}</td>
+                    <td>{{counter}}</td>
+                    <td>
+                        <form action="/cart/delete" method="POST">
+                            <input type="hidden" name="course_id" value="{{id}}">
+                            <button type="submit" class="btn btn-primary">Remove course</button>
+                        </form>
+                    </td>
+                </tr>
+            {{/each}}
+            <tr>
+                <td class="price">{{totalPrice}}</td>
+            </tr>
+        </tbody>
+    </table>
+{{else}}
+    <h2>Cart is empty</h2>
+{{/if}}
