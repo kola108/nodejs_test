@@ -1,4 +1,5 @@
 const express = require('express')
+const mongoose = require('mongoose')
 const app = express()
 const path = require('path')
 const exphbs = require('express-handlebars')
@@ -24,6 +25,19 @@ app.use('/courses', coursesRoute)
 app.use('/add-course', courseAddRoute)
 app.use('/cart', cartRoute)
 
-app.listen(PORT, () => {
-    console.log(`server is running on: http://localhost:${PORT}/`)
-})
+async function start() {
+    try {
+        const url = 'mongodb+srv://kola:gauranga108@testcluste.6etht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+        await mongoose.connect(url, {useNewUrlParser: true})
+        app.listen(PORT, () => {
+            console.log(`server is running on: http://localhost:${PORT}/`)
+        })
+    } catch (e) {
+        console.log(e)
+    }
+}
+
+start()
+
+
+
