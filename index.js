@@ -27,8 +27,12 @@ app.use('/cart', cartRoute)
 
 async function start() {
     try {
-        const url = 'mongodb+srv://kola:gauranga108@testcluste.6etht.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
-        await mongoose.connect(url, {useNewUrlParser: true})
+        const url = 'mongodb+srv://kola:gauranga108@testcluste.6etht.mongodb.net/shop';
+        await mongoose.connect(url, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true,
+            useFindAndModify: false,
+        })
         app.listen(PORT, () => {
             console.log(`server is running on: http://localhost:${PORT}/`)
         })
